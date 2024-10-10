@@ -1,0 +1,23 @@
+<div class="result-container">
+  <h1 class="result-title">Résultat</h1>
+  <div class="result-content">
+    <div class="left-section">
+      <div class="probability-box">
+        <h2>Exactitude du résultat</h2> 
+        <p class="percentage">{{ probabilite }}</p> <!-- Affichage de la probabilité -->
+      </div>
+      <p class="guidance-text">
+        Voici quelques conseils pour vous guider...
+      </p>
+    </div>
+    <div class="right-section">
+      <div class="info-box">
+        <p>{{prediction}}</p> <!-- Affichage de l'avertissement -->
+        <br>
+        <br>
+        <p>{{ avertissement }}</p>     
+        <a [href]="doctolibUrl" target="_blank">Consulter un spécialiste sur Doctolib</a> <!-- Lien vers Doctolib -->
+      </div>
+    </div>
+  </div>
+</div>

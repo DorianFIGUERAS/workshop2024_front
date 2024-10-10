@@ -1,0 +1,34 @@
+<div class="login-container">
+  <h1>Se connecter</h1>
+  <!-- Lier le formulaire à Angular avec [formGroup] et (ngSubmit) -->
+  <form [formGroup]="form" (ngSubmit)="onSubmit_login()">
+    
+    <!-- Champ pour l'email -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Entrez votre email" formControlName="email" required>
+      <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        <small *ngIf="form.get('email')?.errors?.['required']">Email requis.</small>
+        <small *ngIf="form.get('email')?.errors?.['email']">Email invalide.</small>
+      </div>
+    </div>
+
+    <!-- Champ pour le mot de passe -->
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" placeholder="Entrez votre mot de passe" formControlName="password" required>
+      <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+        <small *ngIf="form.get('password')?.errors?.['required']">Mot de passe requis.</small>
+        <small *ngIf="form.get('password')?.errors?.['minlength']">
+          Le mot de passe doit comporter au moins 6 caractères.
+        </small>
+      </div>
+    </div>
+
+    <!-- Bouton de soumission -->
+    <div class="button-container">
+      <button type="submit" [disabled]="form.invalid">Se connecter</button>
+    </div>
+
+  </form>
+</div>

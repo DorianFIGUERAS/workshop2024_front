@@ -16,6 +16,7 @@
             "outputPath": "dist/test",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "baseHref": "/frontend/",
             "polyfills": [
               "zone.js"
             ],
@@ -92,5 +93,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

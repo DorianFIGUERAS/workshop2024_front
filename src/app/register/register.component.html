@@ -1,0 +1,25 @@
+<div class="register-container">
+  <h1>Créer un compte</h1>
+  <!-- Lier le formulaire à Angular avec (ngSubmit) et le FormGroup -->
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    
+    <!-- Champ pour le nom d'utilisateur -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <!-- formControlName lie l'input à la clé 'email' du FormGroup -->
+      <input type="email" id="email" formControlName="email" required>
+    </div>
+
+    <!-- Champ pour le mot de passe -->
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" formControlName="password" required>
+    </div>
+
+    <!-- Bouton de soumission -->
+    <div class="button-container">
+      <button type="submit">S'inscrire</button>
+    </div>
+
+  </form>
+</div>
