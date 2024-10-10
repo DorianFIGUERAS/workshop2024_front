@@ -5,6 +5,7 @@ import {ResultsComponent} from './results/results.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { HistoryComponent } from './history/history.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'inscription', component: RegisterComponent },
   { path: 'resultat', component: ResultsComponent },
+  { path: 'history', component: HistoryComponent },
   { path: '**', redirectTo: '/about' } // Redirige les routes inconnues vers la page "À propos"
 ];
 

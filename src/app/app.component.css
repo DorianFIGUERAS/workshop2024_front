@@ -61,6 +61,50 @@ a:hover {
   color: #007bff; /* Couleur du texte lors du survol */
 }
 
+/* Conteneur de l'icône de profil */
+.profile-icon {
+  position: relative; /* Nécessaire pour positionner la liste déroulante */
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Liste déroulante */
+.dropdown-menu {
+  display: none; /* Masquer la liste déroulante par défaut */
+  position: absolute;
+  top: 70%; /* Positionner la liste juste en dessous de l'icône */
+  right: 80%; /* Aligner la liste à gauche de l'icône */
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 150px; /* Largeur minimale de la liste déroulante */
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Afficher le menu au survol de l'icône de profil */
+.profile-icon:hover .dropdown-menu {
+  display: block;
+}
+
+
+
 
 
 

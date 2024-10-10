@@ -1,22 +1,38 @@
 <nav class="navbar">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
   <div class="logo">
     <a routerLink="/">
-    <img src="/frontend/logo.png" alt="Logo">
+      <img src="/frontend/logo.png" alt="Logo">
     </a>
     <a routerLink="/">
-    <span class="app-name">CancerScan</span>
+      <span class="app-name">CancerScan</span>
     </a>
-
   </div>
   <ul class="nav-links">
-    <li *ngIf="isLoggedIn"><a routerLink="/history">Historique</a></li>
     <li><a routerLink="/apropos">A propos</a></li>
+    <li><a routerLink="/history">Historique</a></li>
+
     <div class="auth">
-    <li *ngIf="!isLoggedIn"><a routerLink="/inscription">S'inscrire</a></li>
-    <li *ngIf="!isLoggedIn"><a routerLink="/login">Se connecter</a></li>
+      <li *ngIf="!isLoggedIn"><a routerLink="/inscription">S'inscrire</a></li>
+      <li *ngIf="!isLoggedIn"><a routerLink="/login">Se connecter</a></li>
     </div>
 
+    <!-- Icône de profil, toujours visible -->
+    <li class="profile-icon">
+      <a routerLink="/profile">
+        <i class="fa fa-user"></i> <!-- Icône de profil avec Font Awesome -->
+      </a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/profile">Mon profil</a></li>
+        <li (click)="logout()">Déconnexion</li>
+      </ul>
+      
+    </li>
+
+    <!-- Option de déconnexion, toujours visible si l'utilisateur est connecté -->
     <li *ngIf="isLoggedIn" (click)="logout()">Se déconnecter</li>
   </ul>
 </nav>
+
 <router-outlet></router-outlet>

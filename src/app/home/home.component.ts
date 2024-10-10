@@ -17,14 +17,14 @@ export class HomeComponent {
   constructor(private router: Router,private fb: FormBuilder, private http: HttpClient) {
     
     this.form = this.fb.group({
-      "Age" : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      "BMI" : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      "Glucose" : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      "Insulin" : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      "HOMA" : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      "Leptin" : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      "Adiponectin" : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      "Resistin" : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      "Age": ['', [Validators.required, Validators.pattern('^[0-9]+(\.[0-9]+)?$')]],
+      "BMI": ['', [Validators.required, Validators.pattern('^[0-9]+(\.[0-9]+)?$')]],
+      "Glucose": ['', [Validators.required, Validators.pattern('^[0-9]+(\.[0-9]+)?$')]],
+      "Insulin": ['', [Validators.required, Validators.pattern('^[0-9]+(\.[0-9]+)?$')]],
+      "HOMA": ['', [Validators.required, Validators.pattern('^[0-9]+(\.[0-9]+)?$')]],
+      "Leptin": ['', [Validators.required, Validators.pattern('^[0-9]+(\.[0-9]+)?$')]],
+      "Adiponectin": ['', [Validators.required, Validators.pattern('^[0-9]+(\.[0-9]+)?$')]],
+      "Resistin": ['', [Validators.required, Validators.pattern('^[0-9]+(\.[0-9]+)?$')]],
       "MCP-1": ['', Validators.required]
     });
     // Call function to get user's region

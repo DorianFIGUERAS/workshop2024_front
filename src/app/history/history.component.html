@@ -1,0 +1,40 @@
+<div *ngIf="noResults; else showResults">
+    <p class="no-data">Aucune donnée disponible</p>
+  </div>
+  
+  <ng-template #showResults>
+    <h1>Historique des Résultats</h1>
+    <table class="history-table">
+      <thead>
+        <tr>
+          <th>Âge</th>
+          <th>IMC</th>
+          <th>Glucose</th>
+          <th>Insuline</th>
+          <th>HOMA</th>
+          <th>Leptine</th>
+          <th>Adiponectine</th>
+          <th>Résistine</th>
+          <th>MCP-1</th>
+          <th>Date</th>
+          <th>Classification</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of historyData">
+          <td>{{ item.Age }}</td>
+          <td>{{ item.BMI }}</td>
+          <td>{{ item.Glucose }}</td>
+          <td>{{ item.Insulin }}</td>
+          <td>{{ item.HOMA }}</td>
+          <td>{{ item.Leptin }}</td>
+          <td>{{ item.Adiponectin }}</td>
+          <td>{{ item.Resistin }}</td>
+          <td>{{ item['MCP-1'] }}</td>
+          <td>{{ item.date | date:'yyyy-MM-dd' }}</td> <!-- Format de la date -->
+          <td>{{ item.Classification === 1 ? 'positif' : 'négatif' }}</td> <!-- Affichage conditionnel de Classification -->
+        </tr>
+      </tbody>
+    </table>
+  </ng-template>
+  
